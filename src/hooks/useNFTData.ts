@@ -1,14 +1,10 @@
 import useInterval from '@hooks/useInterval';
 // import { getNftContract } from '@utils/index';
 import { useCallback, useState } from 'react';
-import NFT from '@assets/abis/NFT';
-import useContract from '@hooks/useContract';
+import { useNFTContract } from '@hooks/useNFTContract';
 
 export function useNFTData() {
-  const contract = useContract(
-    '0xF5e25c151669Cc01807C390E8a9833a3F6E9c422',
-    NFT.abi as unknown as string,
-  );
+  const contract = useNFTContract();
   const [totalSupply, setTotalSupply] = useState(0);
   const [tokenLimit, setTokenLimit] = useState(0);
 
