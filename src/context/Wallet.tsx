@@ -1,5 +1,6 @@
+import { useLocalStorage } from '@hooks/useLocalStorage';
 import { createContext, FC, useCallback, useEffect, useState } from 'react';
-import { useWallet } from 'use-wallet';
+import { useWallet, Connectors } from 'use-wallet';
 
 export type WalletContextType = {
   connected: boolean;
@@ -16,6 +17,9 @@ export const WalletProvider: FC = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const [requestModal, setRequestModal] = useState(false);
+  const [cachedProvider, setCachedProvider] = useLocalStorage<
+    keyof Connectors | undefined
+  >('provider', undefined);
 
   const toggleModal = useCallback(() => {
     setRequestModal((last) => !last);
@@ -29,6 +33,23 @@ export const WalletProvider: FC = ({ children }) => {
 
     setModalOpen(!connected && requestModal);
   }, [connected, requestModal, wallet.status]);
+
+  useEffect(() => {
+    if (connected) {
+      if (typeof window !== 'undefined') {
+        setCachedProvider(wallet.connector);
+      }
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [connected]);
+
+  useEffect(() => {
+    if (cachedProvider) {
+      wallet.connect(cachedProvider);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <WalletContext.Provider
