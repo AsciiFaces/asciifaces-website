@@ -1,4 +1,4 @@
 .title {
-  @apply text-8xl text-white font-play font-extrabold;
+  @apply text-8xl text-white font-play font-extrabold cursor-pointer;
   text-shadow: 4px 4px var(--superiority);
 }

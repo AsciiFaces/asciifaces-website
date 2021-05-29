@@ -4,13 +4,14 @@ import { UseWalletProvider } from 'use-wallet';
 import '../styles/globals.css';
 
 import { AppProps } from 'next/dist/next-server/lib/router/router';
-import WalletModal from '@components/wallet/WalletModal';
+import { WalletProvider } from '@context/Wallet';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <UseWalletProvider chainId={1}>
-      <Component {...pageProps} />;
-      <WalletModal />
+      <WalletProvider>
+        <Component {...pageProps} />;
+      </WalletProvider>
     </UseWalletProvider>
   );
 }

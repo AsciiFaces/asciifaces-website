@@ -1,4 +1,5 @@
 import { Button } from '@components/common';
+import { FC } from 'react';
 import ReactModal from 'react-modal';
 import { useWallet } from 'use-wallet';
 
@@ -14,13 +15,23 @@ const customStyles = {
   },
 };
 
-function WalletModal() {
+interface WalletModalProps {
+  isOpen?: boolean;
+  handleClose?: () => void;
+}
+
+const WalletModal: FC<WalletModalProps> = ({ isOpen = false, handleClose }) => {
   const { connect, status } = useWallet();
 
   const loading = status === 'connecting';
 
   return (
-    <ReactModal isOpen style={customStyles}>
+    <ReactModal
+      isOpen={isOpen}
+      style={customStyles}
+      onRequestClose={handleClose}
+      ariaHideApp={false}
+    >
       <h1>Please connect to a wallet</h1>
       <div className="flex flex-col justify-center">
         <Button disabled={loading} handleClick={() => connect('injected')}>
@@ -33,6 +44,6 @@ function WalletModal() {
       </p>
     </ReactModal>
   );
-}
+};
 
 export default WalletModal;

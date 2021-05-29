@@ -1,10 +1,11 @@
 // import { useWallet } from '@hooks/useWallet';
+import { useAccount } from '@hooks/useAccount';
 import Link from 'next/link';
 import React, { FC } from 'react';
 import s from './Navbar.module.css';
 
 const Navbar: FC = () => {
-  // const wallet = useWallet();
+  const wallet = useAccount();
 
   return (
     <div className="flex justify-between items-center w-full px-8 pt-5">
@@ -24,8 +25,12 @@ const Navbar: FC = () => {
           Opensea
         </button>
       </a>
-      <button type="button" className={s.navBtn}>
-        Connect
+      <button
+        type="button"
+        onClick={() => wallet?.toggleModal()}
+        className={s.navBtn}
+      >
+        {wallet?.connected ? '✓ Connected' : 'Connect'}
       </button>
     </div>
   );
