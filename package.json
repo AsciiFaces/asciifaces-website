@@ -13,7 +13,7 @@
     "next": "10.2.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "web3modal": "^1.9.3"
+    "use-wallet": "^0.8.0"
   },
   "devDependencies": {
     "@types/node": "^15.6.1",

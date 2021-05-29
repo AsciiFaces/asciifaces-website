@@ -1,16 +1,29 @@
-import { getWeb3Modal } from '@utils/index';
-import { createContext, FC, useContext, useState } from 'react';
+import { createContext, FC, useCallback, useState } from 'react';
+import { useWallet } from 'use-wallet';
 
 type WalletContextType = {
   connected: boolean;
+  connect: () => Promise<void>;
 } | null;
 
 export const WalletContext = createContext<WalletContextType>(null);
 
 export const WalletProvider: FC = ({ children }) => {
-  const walletContext = useContext(WalletContext);
+  const wallet = useWallet();
+  const [connected] = useState(false);
 
-  const [web3Modal] = useState(getWeb3Modal());
+  const connect = useCallback(async () => {
+    console.log(wallet);
+  }, [wallet]);
 
-  return <div>{children}</div>;
+  return (
+    <WalletContext.Provider
+      value={{
+        connect,
+        connected,
+      }}
+    >
+      {children}
+    </WalletContext.Provider>
+  );
 };
