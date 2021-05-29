@@ -17,7 +17,7 @@ const Navbar: FC = () => {
       </Link>
       <Link href="/inventory">
         <button type="button" className={s.navBtn}>
-          My Faces
+          Inventory
         </button>
       </Link>
       <a href="https://opensea.io/" target="_blank" rel="noreferrer">

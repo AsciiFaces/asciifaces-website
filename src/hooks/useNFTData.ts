@@ -10,8 +10,10 @@ export function useNFTData() {
 
   const fetchTokenData = useCallback(async () => {
     if (contract) {
-      const supply = await contract.totalSupply();
-      const limit = await contract.MAX_SUPPLY();
+      const [supply, limit] = await Promise.all([
+        contract.totalSupply(),
+        contract.MAX_SUPPLY(),
+      ]);
       return { supply, limit };
     }
     return undefined;
