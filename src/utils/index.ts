@@ -1,12 +1,18 @@
-import Web3Modal from 'web3modal';
+import NFT from '@assets/abis/NFT';
+import ethers from 'ethers';
 
-export function getWeb3Modal() {
-  const providerOptions = {};
+export function getDefaultProvider() {
+  return new ethers.providers.JsonRpcProvider(
+    'https://rpc-mumbai.maticvigil.com',
+  );
+}
 
-  const web3Modal = new Web3Modal({
-    providerOptions,
-    cacheProvider: true,
-  });
+export function getNftContract() {
+  console.log('ethers boy', ethers);
 
-  return web3Modal;
+  return new ethers.Contract(
+    '0xF5e25c151669Cc01807C390E8a9833a3F6E9c422',
+    NFT.abi,
+    getDefaultProvider(),
+  );
 }
