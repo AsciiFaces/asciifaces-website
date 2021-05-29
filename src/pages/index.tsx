@@ -20,8 +20,8 @@ export default function Home() {
           culpa qui officia deserunt mollit anim id est laborum.
         </p>
       </Card>
-      <Showcase />
       <MintButton />
+      <Showcase />
       <Content />
       <MintButton />
     </Container>

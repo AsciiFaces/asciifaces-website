@@ -1,6 +1,6 @@
 .navBtn {
-  @apply border bg-grey bg-white p-1 sm:p-2 flex-grow-0  focus:outline-none;
-  @apply text-xs sm:text-xxs font-mono sm:font-pixelated font-semibold ml-4 sm:ml-6;
+  @apply border bg-grey bg-white p-1 px-2 flex-grow-0  focus:outline-none;
+  @apply text-base font-mono font-semibold ml-4 sm:ml-6;
   @apply shadow-superiority transition duration-300;
   @apply hover:shadow-none hover:transform hover:translate-x-1 hover:translate-y-1;
 }

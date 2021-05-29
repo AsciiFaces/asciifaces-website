@@ -14,6 +14,7 @@ module.exports = {
       },
       fontFamily: {
         pixelated: ['"Press Start 2P"', "cursive"],
+        mono: ["'Courier Prime'", "monospace"],
         play: ["Iceland", "monospace"],
       },
       colors: {
