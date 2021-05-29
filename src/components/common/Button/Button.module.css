@@ -1,0 +1,8 @@
+.button {
+  @apply bg-mandarin shadow-superiority cursor-default;
+  @apply px-4 py-3 my-4;
+}
+
+.animation {
+  @apply cursor-pointer transition duration-300 hover:shadow-none hover:transform hover:translate-x-1 hover:translate-y-1;
+}

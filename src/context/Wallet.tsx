@@ -1,25 +1,29 @@
-import { createContext, FC, useCallback, useState } from 'react';
+import { createContext, FC, useEffect, useState } from 'react';
 import { useWallet } from 'use-wallet';
 
 type WalletContextType = {
   connected: boolean;
-  connect: () => Promise<void>;
+  loading: boolean;
 } | null;
 
 export const WalletContext = createContext<WalletContextType>(null);
 
 export const WalletProvider: FC = ({ children }) => {
   const wallet = useWallet();
-  const [connected] = useState(false);
+  const [connected, setConnected] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const connect = useCallback(async () => {
-    console.log(wallet);
-  }, [wallet]);
+  useEffect(() => {
+    setConnected(wallet.status === 'connected');
+    setLoading(
+      wallet.status === 'connecting' || wallet.status === 'connecting',
+    );
+  }, [wallet.status]);
 
   return (
     <WalletContext.Provider
       value={{
-        connect,
+        loading,
         connected,
       }}
     >

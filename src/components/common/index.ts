@@ -4,3 +4,4 @@ export * from './Loading';
 export * from './Logo';
 export * from './Navbar';
 export * from './Face';
+export * from './Button';

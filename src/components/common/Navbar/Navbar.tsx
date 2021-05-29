@@ -1,8 +1,11 @@
+// import { useWallet } from '@hooks/useWallet';
 import Link from 'next/link';
 import React, { FC } from 'react';
 import s from './Navbar.module.css';
 
 const Navbar: FC = () => {
+  // const wallet = useWallet();
+
   return (
     <div className="flex justify-between items-center w-full px-8 pt-5">
       <div className="flex-grow" />
