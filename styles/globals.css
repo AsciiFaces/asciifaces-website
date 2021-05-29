@@ -1,0 +1,39 @@
+:root {
+  --baby-powder: #fcfef6;
+  --corn: #f2e86d;
+  --grey: #d4d4d4;
+  --green: #3bf0a7;
+  --mandarin: #ed7e4b;
+  --superiority: #669bbc;
+  --violet: #122335;
+}
+
+@import url(https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Iceland&display=swap);
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-size: 20px;
+    font-family: "'IBM Plex Mono'", monospace;
+  }
+
+  p {
+    line-height: 24px;
+  }
+
+  @media (max-width: 768px) {
+    body {
+      font-size: 14px;
+      line-height: 1.3em;
+    }
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}

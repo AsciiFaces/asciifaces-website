@@ -1,0 +1,4 @@
+.btn {
+  @apply mx-8 px-4 py-2 bg-mandarin shadow-superiority focus:outline-none;
+  @apply cursor-pointer transition duration-300 hover:shadow-none hover:transform hover:translate-x-1 hover:translate-y-1;
+}

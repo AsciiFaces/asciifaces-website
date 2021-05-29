@@ -1,0 +1,9 @@
+.root {
+  @apply bg-grey border border-grey shadow-mandarin cursor-pointer;
+  @apply transition duration-300;
+  @apply hover:shadow-none hover:transform hover:translate-x-1 hover:translate-y-1;
+}
+
+.text {
+  @apply w-full px-3 py-2 bg-white text-base;
+}

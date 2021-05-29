@@ -1,0 +1,4 @@
+.title {
+  @apply text-8xl text-white font-play font-extrabold;
+  text-shadow: 4px 4px var(--superiority);
+}

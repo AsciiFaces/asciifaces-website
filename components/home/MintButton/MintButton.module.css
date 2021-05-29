@@ -1,0 +1,8 @@
+.mintBtn {
+  @apply h-16 text-lg sm:text-2xl w-full mt-10 bg-mandarin focus:outline-none;
+  @apply shadow-superiority cursor-default;
+}
+
+.animation {
+  @apply cursor-pointer transition duration-300 hover:shadow-none hover:transform hover:translate-x-1 hover:translate-y-1;
+}
