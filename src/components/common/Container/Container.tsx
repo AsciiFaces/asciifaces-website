@@ -1,6 +1,6 @@
-import { FC } from "react";
-import { Logo } from "../Logo";
-import { Navbar } from "../Navbar";
+import { FC } from 'react';
+import { Logo } from '../Logo';
+import { Navbar } from '../Navbar';
 
 const Container: FC = ({ children }) => {
   return (

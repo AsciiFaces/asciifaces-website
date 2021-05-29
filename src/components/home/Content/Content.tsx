@@ -1,5 +1,5 @@
-import { Card } from "@components/common";
-import React from "react";
+import { Card } from '@components/common';
+import React from 'react';
 
 const Content = () => {
   return (

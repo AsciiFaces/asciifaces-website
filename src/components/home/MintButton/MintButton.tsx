@@ -1,7 +1,7 @@
-import { FC } from "react";
-import cn from "classnames";
+import { FC } from 'react';
+import cn from 'classnames';
 
-import s from "./MintButton.module.css";
+import s from './MintButton.module.css';
 
 type MintButtonProps = {
   disabled?: boolean;
@@ -10,6 +10,7 @@ type MintButtonProps = {
 const MintButton: FC<MintButtonProps> = ({ disabled = false }) => {
   return (
     <button
+      type="button"
       disabled={disabled}
       className={cn(s.mintBtn, { [s.animation]: !disabled })}
     >

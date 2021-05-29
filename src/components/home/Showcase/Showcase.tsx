@@ -1,12 +1,10 @@
-import { RightIcon } from "@assets/icons";
-import { Face } from "@components/common";
-import React, { FC, useState } from "react";
-import { Card, Loading } from "../../common";
+import { Face, Card, Loading } from '@components/common';
+import React, { FC, useState } from 'react';
 
-import s from "./Showcase.module.css";
+import s from './Showcase.module.css';
 
 const Showcase: FC = () => {
-  const [loading, setLoading] = useState(false);
+  const [loading] = useState(false);
   const faceIds = [...Array(8).keys()].map((id) => id + 1);
 
   return (
@@ -23,8 +21,12 @@ const Showcase: FC = () => {
           ))}
         </div>
         <div className="w-full flex justify-center mt-8">
-          <button className={s.btn}>Prev</button>
-          <button className={s.btn}>Next</button>
+          <button type="button" className={s.btn}>
+            Prev
+          </button>
+          <button type="button" className={s.btn}>
+            Next
+          </button>
         </div>
       </div>
     </Card>

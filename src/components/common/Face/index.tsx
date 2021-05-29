@@ -1,1 +1,1 @@
-export { default as Face } from "./Face";
+export { default as Face } from './Face';

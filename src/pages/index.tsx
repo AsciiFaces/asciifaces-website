@@ -1,14 +1,14 @@
-import { Card, Container } from "@components/common";
-import { Content } from "@components/home/Content";
-import { MintButton } from "@components/home/MintButton";
-import { Showcase } from "@components/home/Showcase";
+import { Card, Container } from '@components/common';
+import { Content } from '@components/home/Content';
+import { MintButton } from '@components/home/MintButton';
+import { Showcase } from '@components/home/Showcase';
 
 export default function Home() {
   return (
     <Container>
       <Card>
         <h2 className="text-3xl mb-4 font-semibold">
-          ~ What is this? ~|◕o◕|~{" "}
+          ~ What is this? ~|◕o◕|~{' '}
         </h2>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

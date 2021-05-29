@@ -1,6 +1,6 @@
-import Link from "next/link";
-import { FC } from "react";
-import s from "./Logo.module.css";
+import Link from 'next/link';
+import { FC } from 'react';
+import s from './Logo.module.css';
 
 const Logo: FC = () => {
   return (

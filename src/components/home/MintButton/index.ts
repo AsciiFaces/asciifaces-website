@@ -1,1 +1,1 @@
-export { default as MintButton } from "./MintButton";
+export { default as MintButton } from './MintButton';

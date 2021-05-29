@@ -1,5 +1,5 @@
-import { useRouter } from "next/router";
-import { Card, Container, Face } from "@components/common";
+import { useRouter } from 'next/router';
+import { Card, Container, Face } from '@components/common';
 
 export default function FacePage() {
   const faceIds = [...Array(8).keys()].map((id) => id + 1);
