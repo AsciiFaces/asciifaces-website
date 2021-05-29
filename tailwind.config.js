@@ -13,8 +13,7 @@ module.exports = {
         xxs: ".65rem",
       },
       fontFamily: {
-        pixelated: ['"Press Start 2P"', "cursive"],
-        mono: ["'Courier Prime'", "monospace"],
+        mono: ["'Space Mono'", "monospace"],
         play: ["Iceland", "monospace"],
       },
       colors: {
