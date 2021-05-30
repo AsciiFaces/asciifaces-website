@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import Image from 'next/image';
 import s from './Face.module.css';
 
 interface FaceProps {
@@ -9,9 +10,9 @@ const Face: FC<FaceProps> = ({ id }) => {
   return (
     <a href={`/face/${id}`} target="_blank" rel="noreferrer">
       <div className={s.root} role="button">
-        <img
+        <Image
           className="bg-black"
-          src="https://dummyimage.com/350x350/000/fff"
+          src={`/api/image/${id}`}
           alt="Face"
           width={350}
           height={350}
