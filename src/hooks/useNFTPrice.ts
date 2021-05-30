@@ -7,9 +7,9 @@ export default function useNFTPrice() {
   const [price, setPrice] = useState(0);
 
   useInterval(async () => {
-    const price = await contract.calculatePrice();
+    const priceNew = await contract?.calculatePrice();
 
-    setPrice(price);
+    setPrice(priceNew);
   }, 10000);
 
   return { price };
